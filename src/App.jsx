@@ -1,4 +1,4 @@
-import Main from "./main/Main";
+import Main from "./main/container/Main";
 
 const data = {
   title: "Advanced To-Do List",
