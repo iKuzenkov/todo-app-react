@@ -66,7 +66,7 @@ function Main(props) {
 
   const addTask = () => {
     if (inputValue.trim() === "") {
-      setPlaceholder("Please, add task");
+      setPlaceholder(data.inputPlaceholderSecondShow);
       return;
     } else {
       const newTask = {
@@ -78,7 +78,7 @@ function Main(props) {
 
       setTasks([...tasks, newTask]);
       setInputValue("");
-      setPlaceholder(data.inputPlaceholder);
+      setPlaceholder(data.inputPlaceholderFirstShow);
     }
   };
 
@@ -161,7 +161,7 @@ function Main(props) {
             className="hide-show"
             onClick={() => setCollapsed(!collapsed)}
           >
-            {collapsed ? "🔽" : "🔼"}
+            {collapsed ? `${data.hide}` : `${data.show}`}
           </button>
           <InputRow
             data={data}

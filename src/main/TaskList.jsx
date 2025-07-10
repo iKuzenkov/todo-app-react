@@ -50,14 +50,14 @@ function TaskList({
                   {data.copyEmoji}
                 </span>
                 {copiedIndex === index && (
-                  <span className="copy-msg">Copied!✅</span>
+                  <span className="copy-msg">{data.copyMessege}</span>
                 )}
               </div>
 
               <input
                 type="color"
                 className="change-color"
-                defaultValue={task.color || "#ffffff"}
+                value={task.color || "#ffffff"}
                 onClick={(e) => e.stopPropagation()}
                 onChange={(e) => changeColor(index, e.target.value)}
               />
