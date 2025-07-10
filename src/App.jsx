@@ -1,11 +1,12 @@
-import "./App.css";
 import Main from "./main/Main";
 
 const data = {
-  title: "To-Do List",
+  title: "Advanced To-Do List",
   textButton: "Add",
   inputPlaceholder: "Add your task",
-  trashIcon: "🗑"
+  trashEmoji: "❌",
+  copyEmoji: "📋",
+  editEmoji: "✏️",
 };
 
 function App() {

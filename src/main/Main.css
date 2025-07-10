@@ -1,0 +1,212 @@
+.todo-app {
+  width: 100%;
+  max-width: 460px;
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  padding: 20px 20px 30px;
+  border-radius: 12px;
+  font-family: sans-serif;
+  position: relative;
+}
+
+.title h2 {
+  position: relative;
+  bottom: 27px;
+  left: 25%;
+  color: #4a7c59;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+.todo-app h2 img {
+  width: 22px;
+  margin-left: 8px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  background: #f1f1f1;
+  border-radius: 20px;
+  padding: 8px 12px;
+  margin-bottom: 16px;
+}
+
+input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #333;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.edit-input {
+  margin-top: 6px;
+  padding: 6px 10px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 100%;
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 8px 20px;
+  background: #4a7c59;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+button.hide-show {
+  position: absolute;
+  top: 2px;
+  right: 0px;
+  background: none;
+  border-radius: 20px;
+}
+
+.drag-icon {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border-radius: 20px;
+  user-select: none;
+  cursor: grab;
+  gap: 3px;
+}
+
+.draggable-wrapper {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  cursor: default;
+  user-select: none;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  background-color: #333;
+  border-radius: 50%;
+}
+
+.checkbox {
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-image: url(./assets/images/unchecked.png);
+  background-size: cover;
+  top: 10px;
+  left: 10px;
+}
+
+li.checked .checkbox {
+  background-image: url(./assets/images/checked.png);
+}
+
+ul li {
+  list-style: none;
+  font-size: 14px;
+  padding: 10px 8px 10px 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #eee;
+}
+
+ul li.checked .task-text {
+  color: #999;
+  text-decoration: line-through;
+}
+
+.task-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-text {
+  color: #333;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+.task-actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  border-left: 1px solid green;
+}
+
+input.change-color {
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  appearance: none;
+}
+
+input.change-color::-webkit-color-swatch-wrapper,
+input.change-color::-webkit-color-swatch {
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+}
+
+.delete-btn,
+.copy-btn,
+.edit-btn {
+  width: 22px;
+  height: 22px;
+  font-size: 16px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 22px;
+  cursor: pointer;
+}
+
+.copy-container {
+  position: relative;
+}
+
+.copy-msg {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #dff0d8;
+  color: #3c763d;
+  font-size: 11px;
+  border-radius: 4px;
+  padding: 2px 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 1;
+  animation: fadeOut 3s ease forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
