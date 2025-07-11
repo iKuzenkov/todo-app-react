@@ -3,8 +3,8 @@ import Main from "./main/container/Main";
 const data = {
   title: "Advanced To-Do List",
   textButton: "Add",
-  inputPlaceholderFirstShow: "Add your task",
-  inputPlaceholderSecondShow: "Please, add task",
+  inputPlaceholderFirstState: "Add your task",
+  inputPlaceholderSecondState: "Please, add task",
   deletedEmoji: "❌",
   copyEmoji: "📋",
   editEmoji: "✏️",

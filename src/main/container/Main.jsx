@@ -5,8 +5,8 @@ import TaskList from "../TaskList";
 
 function Main({ data }) {
   const {
-    inputPlaceholderFirstShow,
-    inputPlaceholderSecondShow,
+    inputPlaceholderFirstState,
+    inputPlaceholderSecondState,
     title,
     hide,
     show,
@@ -22,7 +22,7 @@ function Main({ data }) {
   });
 
   const [inputValue, setInputValue] = useState("");
-  const [placeholder, setPlaceholder] = useState(inputPlaceholderFirstShow);
+  const [placeholder, setPlaceholder] = useState(inputPlaceholderFirstState);
   const [copiedIndex, setCopiedIndex] = useState(null);
   const [collapsed, setCollapsed] = useState(false);
   const panelRef = useRef(null);
@@ -53,6 +53,7 @@ function Main({ data }) {
 
     const onMouseMove = (e) => {
       if (!isDragging) return;
+
       wrapper.style.left = `${e.clientX - offsetX}px`;
       wrapper.style.top = `${e.clientY - offsetY}px`;
     };
@@ -72,7 +73,7 @@ function Main({ data }) {
 
   const addTask = () => {
     if (inputValue.trim() === "") {
-      setPlaceholder(inputPlaceholderSecondShow);
+      setPlaceholder(inputPlaceholderSecondState);
       return;
     } else {
       const newTask = {
@@ -84,7 +85,7 @@ function Main({ data }) {
 
       setTasks([...tasks, newTask]);
       setInputValue("");
-      setPlaceholder(inputPlaceholderFirstShow);
+      setPlaceholder(inputPlaceholderFirstState);
     }
   };
 
