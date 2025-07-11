@@ -1,4 +1,10 @@
-function InputRow({ data, inputValue, placeholder, setInputValue, addTask }) {
+function InputRow({
+  data: { textButton },
+  inputValue,
+  placeholder,
+  setInputValue,
+  addTask,
+}) {
   return (
     <>
       <div className="row">
@@ -8,7 +14,7 @@ function InputRow({ data, inputValue, placeholder, setInputValue, addTask }) {
           placeholder={placeholder}
           onChange={(e) => setInputValue(e.target.value)}
         />
-        <button onClick={addTask}>{data.textButton}</button>
+        <button onClick={addTask}>{textButton}</button>
       </div>
     </>
   );

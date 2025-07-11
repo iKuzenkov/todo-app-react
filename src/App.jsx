@@ -5,7 +5,7 @@ const data = {
   textButton: "Add",
   inputPlaceholderFirstShow: "Add your task",
   inputPlaceholderSecondShow: "Please, add task",
-  trashEmoji: "❌",
+  deletedEmoji: "❌",
   copyEmoji: "📋",
   editEmoji: "✏️",
   copyMessege: "Copied!✅",

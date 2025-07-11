@@ -3,8 +3,14 @@ import "./Main.css";
 import InputRow from "../InputRow";
 import TaskList from "../TaskList";
 
-function Main(props) {
-  const data = props.data;
+function Main({ data }) {
+  const {
+    inputPlaceholderFirstShow,
+    inputPlaceholderSecondShow,
+    title,
+    hide,
+    show,
+  } = data;
 
   const [tasks, setTasks] = useState(() => {
     try {
@@ -16,7 +22,7 @@ function Main(props) {
   });
 
   const [inputValue, setInputValue] = useState("");
-  const [placeholder, setPlaceholder] = useState(data.inputPlaceholder);
+  const [placeholder, setPlaceholder] = useState(inputPlaceholderFirstShow);
   const [copiedIndex, setCopiedIndex] = useState(null);
   const [collapsed, setCollapsed] = useState(false);
   const panelRef = useRef(null);
@@ -66,7 +72,7 @@ function Main(props) {
 
   const addTask = () => {
     if (inputValue.trim() === "") {
-      setPlaceholder(data.inputPlaceholderSecondShow);
+      setPlaceholder(inputPlaceholderSecondShow);
       return;
     } else {
       const newTask = {
@@ -78,7 +84,7 @@ function Main(props) {
 
       setTasks([...tasks, newTask]);
       setInputValue("");
-      setPlaceholder(data.inputPlaceholderFirstShow);
+      setPlaceholder(inputPlaceholderFirstShow);
     }
   };
 
@@ -122,13 +128,8 @@ function Main(props) {
   const copyTask = async (index) => {
     const taskToCopy = tasks[index];
     if (taskToCopy) {
-      try {
-        await navigator.clipboard.writeText(taskToCopy.text);
-        console.log("Copied: ", taskToCopy.text);
-        lastEffect(index);
-      } catch (err) {
-        console.log("Copy failed: ", err);
-      }
+      await navigator.clipboard.writeText(taskToCopy.text);
+      lastEffect(index);
     }
   };
 
@@ -152,7 +153,7 @@ function Main(props) {
       <div className="draggable-wrapper" ref={panelRef}>
         <div className="todo-app">
           <div className="title">
-            <h2>{data.title}</h2>
+            <h2>{title}</h2>
           </div>
           <div className="drag-icon" ref={dragHandleRef}>
             ⠿
@@ -161,7 +162,7 @@ function Main(props) {
             className="hide-show"
             onClick={() => setCollapsed(!collapsed)}
           >
-            {collapsed ? `${data.hide}` : `${data.show}`}
+            {collapsed ? `${hide}` : `${show}`}
           </button>
           <InputRow
             data={data}

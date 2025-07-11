@@ -1,5 +1,5 @@
 function TaskList({
-  data,
+  data: { editEmoji, copyEmoji, copyMessege, deletedEmoji },
   tasks,
   toggleTask,
   deleteTask,
@@ -15,7 +15,6 @@ function TaskList({
       {tasks.map((task, index) => (
         <li key={index} className={task.checked ? "checked" : ""}>
           <span className="checkbox" onClick={() => toggleTask(index)}></span>
-
           <div className="task-row">
             <span
               className="task-text"
@@ -36,9 +35,8 @@ function TaskList({
                   editTask(index);
                 }}
               >
-                {data.editEmoji}
+                {editEmoji}
               </span>
-
               <div className="copy-container">
                 <span
                   className="copy-btn"
@@ -47,13 +45,12 @@ function TaskList({
                     copyTask(index);
                   }}
                 >
-                  {data.copyEmoji}
+                  {copyEmoji}
                 </span>
                 {copiedIndex === index && (
-                  <span className="copy-msg">{data.copyMessege}</span>
+                  <span className="copy-msg">{copyMessege}</span>
                 )}
               </div>
-
               <input
                 type="color"
                 className="change-color"
@@ -61,7 +58,6 @@ function TaskList({
                 onClick={(e) => e.stopPropagation()}
                 onChange={(e) => changeColor(index, e.target.value)}
               />
-
               <span
                 className="delete-btn"
                 onClick={(e) => {
@@ -69,7 +65,7 @@ function TaskList({
                   deleteTask(index);
                 }}
               >
-                {data.trashEmoji}
+                {deletedEmoji}
               </span>
             </div>
           </div>
