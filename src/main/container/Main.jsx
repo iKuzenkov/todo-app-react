@@ -10,6 +10,7 @@ function Main({ data }) {
     title,
     hide,
     show,
+    dragIcon,
   } = data;
 
   const [tasks, setTasks] = useState(() => {
@@ -54,8 +55,27 @@ function Main({ data }) {
     const onMouseMove = (e) => {
       if (!isDragging) return;
 
-      wrapper.style.left = `${e.clientX - offsetX}px`;
-      wrapper.style.top = `${e.clientY - offsetY}px`;
+      const wrapperRect = wrapper.getBoundingClientRect();
+      const parentWidth = window.innerWidth;
+      const parentHeight = window.innerHeight;
+
+      let newLeft = e.clientX - offsetX;
+      let newTop = e.clientY - offsetY;
+
+      if (newLeft < 0) newLeft = 0;
+
+      if (newLeft + wrapperRect.width > parentWidth) {
+        newLeft = parentWidth - wrapperRect.width;
+      }
+
+      if (newTop < 0) newTop = 0;
+
+      if (newTop + wrapperRect.height > parentHeight) {
+        newTop = parentHeight - wrapperRect.height;
+      }
+
+      wrapper.style.left = `${newLeft}px`;
+      wrapper.style.top = `${newTop}px`;
     };
 
     const onMouseUp = () => {
@@ -157,7 +177,7 @@ function Main({ data }) {
             <h2>{title}</h2>
           </div>
           <div className="drag-icon" ref={dragHandleRef}>
-            ⠿
+            {dragIcon}
           </div>
           <button
             className="hide-show"

@@ -1,10 +1,11 @@
 .todo-app {
   width: 100%;
   max-width: 460px;
+  box-sizing: border-box;
   background: #ffffff;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  margin: 40px auto;
-  padding: 20px 20px 30px;
+  margin: 0;
+  padding: 20px 35px 10px 5px;
   border-radius: 12px;
   font-family: sans-serif;
   position: relative;
@@ -93,6 +94,9 @@ button.hide-show {
   left: 100px;
   cursor: default;
   user-select: none;
+  display: inline-block;
+  width: max-content;
+  height: max-content;
 }
 
 .dot {
