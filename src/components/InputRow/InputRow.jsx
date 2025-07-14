@@ -1,3 +1,5 @@
+import "./InputRow.css";
+
 function InputRow({
   data: { textButton },
   inputValue,

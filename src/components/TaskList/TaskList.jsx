@@ -1,3 +1,5 @@
+import "./TaskList.css";
+
 function TaskList({
   data: { editEmoji, copyEmoji, copyMessege, deletedEmoji },
   tasks,
@@ -20,8 +22,6 @@ function TaskList({
               className="task-text"
               style={{
                 backgroundColor: task.color || "",
-                borderRadius: "6px",
-                padding: "4px 8px",
               }}
             >
               {task.text}

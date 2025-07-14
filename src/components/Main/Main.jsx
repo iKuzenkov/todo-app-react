@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Main.css";
-import InputRow from "../InputRow";
-import TaskList from "../TaskList";
+import InputRow from "../InputRow/InputRow";
+import TaskList from "../TaskList/TaskList";
 
 function Main({ data }) {
   const {
