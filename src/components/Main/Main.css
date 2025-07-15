@@ -71,14 +71,14 @@ button.hide-show {
   height: 24px;
   width: 24px;
   border-radius: 50%;
-  background-image: url(../assets/images/unchecked.png);
+  background-image: url(../../assets/images/unchecked.png);
   background-size: cover;
   top: 10px;
   left: 10px;
 }
 
 li.checked .checkbox {
-  background-image: url(../assets/images/checked.png);
+  background-image: url(../../assets/images/checked.png);
 }
 
 .task-actions {
