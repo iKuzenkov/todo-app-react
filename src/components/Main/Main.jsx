@@ -1,7 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
+
 import "./Main.css";
+
 import InputRow from "../InputRow/InputRow";
 import TaskList from "../TaskList/TaskList";
+
+import gitHubIcon from "../../assets/images/info-button/github_icon.png";
+import websiteIcon from "../../assets/images/info-button/website_icon.png";
+import donateIcon from "../../assets/images/info-button/donate_icon.png";
+import gmailIcon from "../../assets/images/info-button/gmail_icon.png";
 
 function Main({ data }) {
   const {
@@ -206,6 +213,39 @@ function Main({ data }) {
               deleteTask={deleteTask}
             />
           )}
+          <div className="info">
+            <a
+              href="https://github.com/iKuzenkov/todo-app-react"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={gitHubIcon} alt="GitHub" title="GitHub" />
+            </a>
+
+            <a
+              href="https://browser-extensions-hub.vercel.app/to-do"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={websiteIcon} alt="Website" title="Website" />
+            </a>
+
+            <a
+              href="https://browser-extensions-hub.vercel.app/donate"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={donateIcon} alt="Donate" title="Donate" />
+            </a>
+
+            <a
+              href="https://browser-extensions-hub.vercel.app/contact"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={gmailIcon} alt="Gmail" title="Gmail" />
+            </a>
+          </div>
         </div>
       </div>
     </>
